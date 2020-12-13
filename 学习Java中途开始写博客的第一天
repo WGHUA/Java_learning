@@ -2,27 +2,35 @@
 
 package com.itheima_02;
 
-import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class SetDemo {
     public static void main(String[] args) {
-        
+
         Map<String, String> map = new HashMap<>();
-        
+
         map.put("yaobeina", "beike");
         map.put("caiyilin", "jolin");
         map.put("leihana", "rihanna");
-        
+
+        /*方法一
         Set<String> s = map.keySet();
         for(String key:s){
             String value = map.get(key);
-            System.out.println(key,value);
+            System.out.println();
+        }
+        */
+        
+        //方法二
+        Set<Map.Entry<String, String>> entrySet = map.entrySet();
+        for (Map.Entry<String, String> ma : entrySet) {
+            System.out.println(ma.getKey() + "," + ma.getValue());
         }
     }
-    
+
+
 }
 
 
